@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>demo</title>
+    <style type="text/css">
+      *{
+        margin: 0;
+        padding: 0;
+      }
+      canvas{
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+      }
+      .container {
+        width: 60%;
+        margin: 10px auto 0;
+      }
+    </style>
+</head>
+
+<body>
+  <div class="container">
+    <canvas id="myChart" width="400" height="400"></canvas>
+  </div>
+  <script src="Chart.js"></script>
+  <script>
+    var data = {
+      type: 'polarArea',
+      data: {
+        datasets: [{
+          data: [
+              11,
+              16,
+              7,
+              3,
+              14
+          ],
+          backgroundColor: [
+              "#FF6384",
+              "#4BC0C0",
+              "#FFCE56",
+              "#E7E9ED",
+              "#36A2EB"
+          ],
+          label: 'My dataset' // for legend
+        }],
+        labels: [
+          "Red",
+          "Green",
+          "Yellow",
+          "Grey",
+          "Blue"
+        ]
+      },
+      options: {
+        elements: {
+          arc: {
+              borderColor: "#000000"
+          }
+        }
+      }
+    }
+
+    var ctx = document.getElementById("myChart");
+    var myChart = new Chart(ctx, data);
+    
+</script>
+</body>
+
+</html>
